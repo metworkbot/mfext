@@ -65,13 +65,13 @@ pipeline:
       branch:
         exclude: [ integration ]
   publish_ci_integration:
-    <<: *build_ci_common
+    <<: *publish_ci_common
     image: metwork/mfext-${OS_VERSION}-buildimage:integration
     when:
       event: [push]
       branch: integration
   publish_ci:
-    <<: *build_ci_common
+    <<: *publish_ci_common
     image: metwork/mfext-${OS_VERSION}-buildimage:master
     when:
       event: [push]
