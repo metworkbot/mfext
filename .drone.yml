@@ -77,7 +77,7 @@ pipeline:
       event: [push]
       branch:
         exclude: [ integration ]
-  trigger_integration
+  trigger_integration:
     <<: *trigger_common
     repositories:
       - metwork-framework/docker-mfcom-${OS_VERSION}-buildimage@integration
@@ -85,7 +85,7 @@ pipeline:
       status: [ success ]
       event: push
       branch: integration
-  trigger_master
+  trigger_master:
     <<: *trigger_common
     repositories:
       - metwork-framework/docker-mfcom-${OS_VERSION}-buildimage@master
